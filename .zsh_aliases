@@ -1,0 +1,34 @@
+# For servers with Docker
+alias dcup='docker compose -f docker-compose.yml up -d' #brings up all containers if one is not defined after dcup
+alias dcdown='docker compose -f docker-compose.yml stop' #brings down all containers if one is not defined after dcdown
+alias dcpull='docker compose -f docker-compose.yml pull' #pulls all new images unless one is specified
+alias dclogs='docker compose -f docker-compose.yml logs -tf --tail="50" '
+alias dtail='docker logs -tf --tail="50" "$@"'
+alias dz='~/git/dz/dz'
+alias upgradeall="sudo bash -c 'apt update && sudo apt -y upgrade'"
+
+# General command usability improvements or prettifying
+alias df="df -H" #always make it human readable
+alias vim='nvim'
+
+# Enable color support for ls and add handy aliases
+if command -v dircolors &>/dev/null; then
+    if [[ -r ~/.dircolors ]]; then
+        eval "$(dircolors -b ~/.dircolors)"
+    else
+        eval "$(dircolors -b)"
+    fi
+
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
