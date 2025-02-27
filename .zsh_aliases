@@ -4,7 +4,7 @@ alias dcdown='docker compose -f docker-compose.yml stop' #brings down all contai
 alias dcpull='docker compose -f docker-compose.yml pull' #pulls all new images unless one is specified
 alias dclogs='docker compose -f docker-compose.yml logs -tf --tail="50" '
 alias dtail='docker logs -tf --tail="50" "$@"'
-alias dz='~/git/dz/dz'
+alias dz='~/git/dz/dz' # from https://github.com/GammaGames/dz
 alias upgradeall="sudo bash -c 'apt update && sudo apt -y upgrade'"
 
 # General command usability improvements or prettifying
@@ -29,6 +29,7 @@ if command -v dircolors &>/dev/null; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -lF'
+alias lla='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
